@@ -2,26 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
+/* styles/globals.css */
+@import "~aos/dist/aos.css";
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: 'Outfit', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h2,
+h1,
+h3 {
+  font-family: 'Heebo', sans-serif;
+
+}
+
+
+
+.custom-container {
+  @apply px-5 md:px-10 max-w-7xl mx-auto;
+}
+
+
+::-webkit-scrollbar {
+  width: 9px;
+  border-radius: 10px;
+  height: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5036E1;
+  border-radius: 10px;
+  height: 50px;
+}
+
+html {
+  scrollbar-color: #5036E1 #f1f1f1;
+}
+
+
+
+
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid gray;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.cursor2 {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #5036E1;
+  background-color: black;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.text-stroke-effect {
+  position: relative;
+}
+
+.text-stroke-effect::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(128, 128, 128, 0.266);
+  color: transparent;
+}
+
+
+
+
+
+.navbar_dark_bg {
+  background: url("../assets/img/Group 377.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+
+.navbar_light_bg {
+  background: url("../assets/img/Group 377 (1).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
 }

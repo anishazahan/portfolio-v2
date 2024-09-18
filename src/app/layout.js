@@ -1,15 +1,18 @@
-import localFont from "next/font/local";
+import MainLayout from "@/Components/MainLayout";
+import { Heebo, Outfit } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// Google Fonts
+const heebo = Heebo({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-heebo",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const outfit = Outfit({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-outfit",
 });
 
 export const metadata = {
@@ -20,10 +23,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${heebo.variable} ${outfit.variable} antialiased`}>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
